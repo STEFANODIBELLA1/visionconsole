@@ -10,8 +10,16 @@
   </head>
   <body>
     <div id="root"></div>
-    <!-- Questo script carica la tua applicazione React. 
-         Non è necessario aggiungere altri script qui. -->
+
+    <!-- Librerie esterne per la generazione di PDF e file Excel -->
+    <!-- Libreria per leggere e scrivere file Excel (.xlsx) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <!-- Libreria principale per la creazione di file PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <!-- Plugin per jsPDF per creare tabelle complesse automaticamente -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+
+    <!-- Questo script carica la tua applicazione React. -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
