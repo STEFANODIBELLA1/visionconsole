@@ -236,30 +236,30 @@ const Laboratorio = ({ vendite, venditori }) => {
                 <h3 className="text-2xl font-semibold mb-4">Carica Vendita</h3>
                 <form onSubmit={handleSubmit} className="space-y-4">
                      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-                        <div><label>Data</label><Input type="text" name="data" readOnly defaultValue={new Date().toLocaleDateString('it-IT')} className="bg-gray-100" /></div>
-                        <div><label>Venditore</label><Select name="venditore">{venditori.map(v => <option key={v.id} value={v.nome}>{v.nome}</option>)}</Select></div>
-                        <div><label>Tipo Lente</label><Select name="tipo_lente"><option>Monofocale</option><option>Multifocale</option><option>Office</option></Select></div>
-                        <div><label>Ordine Lente</label><Select name="ordine_lente"><option>Primo</option><option>Secondo</option></Select></div>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div><label>Cognome Cliente</label><Input type="text" name="cliente" required /></div>
-                        <div><label>Stato Ordine</label><Select name="stato_ordine" required><option value="DA ORDINARE">DA ORDINARE</option><option value="LENTE ORDINATE">LENTE ORDINATE</option><option value="PRONTO">PRONTO</option><option value="CONSEGNATO">CONSEGNATO</option></Select></div>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <div><label>Rif.Vaschetta (3 cifre)</label><Input type="text" name="rif_vaschetta" pattern="\d{3}" maxLength="3" required /></div>
-                        <div><label>Numero Ordine (5 cifre)</label><Input type="text" name="numero_ordine" pattern="\d{5}" maxLength="5" required /></div>
-                        <div><label>Importo (€)</label><Input type="number" name="importo" step="0.01" min="0" required /></div>
-                    </div>
-                    <div>
-                        <label className="font-semibold">Trattamenti</label>
-                        <div className="flex flex-wrap gap-4 mt-2">
-                            {['Transition', 'Luce Blu', 'Sun RX', 'SOS'].map(t => (<label key={t} className="flex items-center"><input type="checkbox" name="trattamento" value={t} className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500 mr-2" />{t}</label>))}
-                        </div>
-                    </div>
-                    <div className="flex gap-4 pt-4">
-                        <Button type="submit" className="bg-green-500 hover:bg-green-600">Salva Vendita</Button>
-                        <Button onClick={() => setSubView('menu')} className="bg-gray-500 hover:bg-gray-600">Annulla</Button>
-                    </div>
+                         <div><label>Data</label><Input type="text" name="data" readOnly defaultValue={new Date().toLocaleDateString('it-IT')} className="bg-gray-100" /></div>
+                         <div><label>Venditore</label><Select name="venditore">{venditori.map(v => <option key={v.id} value={v.nome}>{v.nome}</option>)}</Select></div>
+                         <div><label>Tipo Lente</label><Select name="tipo_lente"><option>Monofocale</option><option>Multifocale</option><option>Office</option></Select></div>
+                         <div><label>Ordine Lente</label><Select name="ordine_lente"><option>Primo</option><option>Secondo</option></Select></div>
+                     </div>
+                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                         <div><label>Cognome Cliente</label><Input type="text" name="cliente" required /></div>
+                         <div><label>Stato Ordine</label><Select name="stato_ordine" required><option value="DA ORDINARE">DA ORDINARE</option><option value="LENTE ORDINATE">LENTE ORDINATE</option><option value="PRONTO">PRONTO</option><option value="CONSEGNATO">CONSEGNATO</option></Select></div>
+                     </div>
+                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                         <div><label>Rif.Vaschetta (3 cifre)</label><Input type="text" name="rif_vaschetta" pattern="\d{3}" maxLength="3" required /></div>
+                         <div><label>Numero Ordine (5 cifre)</label><Input type="text" name="numero_ordine" pattern="\d{5}" maxLength="5" required /></div>
+                         <div><label>Importo (€)</label><Input type="number" name="importo" step="0.01" min="0" required /></div>
+                     </div>
+                     <div>
+                         <label className="font-semibold">Trattamenti</label>
+                         <div className="flex flex-wrap gap-4 mt-2">
+                             {['Transition', 'Luce Blu', 'Sun RX', 'SOS'].map(t => (<label key={t} className="flex items-center"><input type="checkbox" name="trattamento" value={t} className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500 mr-2" />{t}</label>))}
+                         </div>
+                     </div>
+                     <div className="flex gap-4 pt-4">
+                         <Button type="submit" className="bg-green-500 hover:bg-green-600">Salva Vendita</Button>
+                         <Button onClick={() => setSubView('menu')} className="bg-gray-500 hover:bg-gray-600">Annulla</Button>
+                     </div>
                 </form>
             </div>
         );
@@ -270,14 +270,14 @@ const Laboratorio = ({ vendite, venditori }) => {
             <h3 className="text-2xl font-semibold mb-4">Stato Occhiale / Ricerca</h3>
             <div className="bg-gray-50 p-4 rounded-lg space-y-4 mb-6">
                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div><label>A partire dalla data</label><Input type="date" id="data_inizio_ricerca" defaultValue={new Date(new Date().setMonth(new Date().getMonth() - 6)).toISOString().split('T')[0]} /></div>
-                    <div><label>Cerca per Cognome</label><Input type="text" id="cerca_cliente_stato" /></div>
-                    <div><label>Cerca per Rif.Vaschetta</label><Input type="text" id="cerca_rif_vaschetta_stato" maxLength="3" /></div>
+                     <div><label>A partire dalla data</label><Input type="date" id="data_inizio_ricerca" defaultValue={new Date(new Date().setMonth(new Date().getMonth() - 6)).toISOString().split('T')[0]} /></div>
+                     <div><label>Cerca per Cognome</label><Input type="text" id="cerca_cliente_stato" /></div>
+                     <div><label>Cerca per Rif.Vaschetta</label><Input type="text" id="cerca_rif_vaschetta_stato" maxLength="3" /></div>
                  </div>
                  <div className="flex gap-4">
-                    <Button onClick={() => handleSearch('stato')}>Cerca Stato</Button>
-                    <Button onClick={() => handleSearch('dettagli')}>Cerca Dati Completi</Button>
-                    <Button onClick={() => { setSearchPerformed(false); setSearchResults([]); setDetailedResults([]); }} className="bg-gray-500 hover:bg-gray-600">Nuova Ricerca</Button>
+                     <Button onClick={() => handleSearch('stato')}>Cerca Stato</Button>
+                     <Button onClick={() => handleSearch('dettagli')}>Cerca Dati Completi</Button>
+                     <Button onClick={() => { setSearchPerformed(false); setSearchResults([]); setDetailedResults([]); }} className="bg-gray-500 hover:bg-gray-600">Nuova Ricerca</Button>
                  </div>
             </div>
             {searchPerformed && (
@@ -307,7 +307,7 @@ const Laboratorio = ({ vendite, venditori }) => {
             }
             setConfirmState({
                 isOpen: true,
-                onConfirm: () => async () => {
+                onConfirm: async () => {
                     await deleteDocument('vendite', venditaDaEliminare.id);
                     showAlert('Successo', `Vendita con Numero Ordine ${numOrdine} eliminata.`, 'success');
                     setNumOrdine('');
@@ -728,10 +728,10 @@ const InvioChiusura = ({ vendite, emailAmministrazioni, onClose }) => {
                 <div className="mb-4">
                     <strong className="font-bold">3. Inserisci Totali Manuali</strong>
                      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-2">
-                        <div><label>Fatturato Cassa (€)</label><Input type="number" name="fatturato" step="0.01" required/></div>
-                        <div><label>N. Pacchetti LAC</label><Input type="number" name="pacchetti" /></div>
-                        <div><label>N. Occhiali Sole</label><Input type="number" name="sole" /></div>
-                        <div><label>Valore Sole (€)</label><Input type="number" name="valoreSole" step="0.01" /></div>
+                         <div><label>Fatturato Cassa (€)</label><Input type="number" name="fatturato" step="0.01" required/></div>
+                         <div><label>N. Pacchetti LAC</label><Input type="number" name="pacchetti" /></div>
+                         <div><label>N. Occhiali Sole</label><Input type="number" name="sole" /></div>
+                         <div><label>Valore Sole (€)</label><Input type="number" name="valoreSole" step="0.01" /></div>
                      </div>
                 </div>
                 <div className="flex justify-end gap-4">
